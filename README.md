@@ -2,11 +2,11 @@
 
 ## Overview
 
-This is a simple kedor pipeline that shows how custom datasets can be leveraged to process and transcribe raw audio files using torchaudio.
+This is a simple kedro pipeline that shows how custom datasets can be leveraged to process and transcribe raw audio files using torchaudio.
 
 The pipeline includes one custom dataset class `AudioDataSet` and two nodes as shown in the image below:
 
-![Pipeline Overview](pipeline.png)
+![Pipeline overview](pipeline.png)
 
 ## Get Started
 
@@ -14,6 +14,7 @@ The pipeline includes one custom dataset class `AudioDataSet` and two nodes as s
 2. Create new conda environment
 ```
 conda create -n audio_pipeline python=3.10
+conda activate audio_pipeline
 ```
 3. Install dependencies
 ```
@@ -25,8 +26,8 @@ pip install -r requirements.txt
 OPENAI_API_KEY= # your API key
 ```
 6. Put `.mp3` audio files that should be processed into directory `data/01_raw`
-7. Modify whipser parameters in file  `conf/base/parameters.yml` according to your needs
-7. Run pipline
+7. Modify Whisper parameters in file  `conf/base/parameters.yml` according to your needs
+7. Run pipeline
 ```
 kedro run
 ```
