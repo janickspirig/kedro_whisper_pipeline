@@ -1,0 +1,5 @@
+whisper_api_kwargs:
+  temperature: 0.0
+  response_format: text
+  model: whisper-1
+  language: pt

@@ -1,0 +1,37 @@
+[build-system]
+requires = [ "setuptools",]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "audio_transcription"
+readme = "README.md"
+dynamic = [ "dependencies", "version",]
+
+[project.scripts]
+audio-transcription = "audio_transcription.__main__:main"
+
+[tool.kedro]
+package_name = "audio_transcription"
+project_name = "audio_transcription"
+kedro_init_version = "0.19.5"
+tools = [ "Linting", "Data Structure",]
+example_pipeline = "False"
+source_dir = "src"
+
+[tool.ruff]
+line-length = 88
+show-fixes = true
+select = [ "F", "W", "E", "I", "UP", "PL", "T201",]
+ignore = [ "E501",]
+
+[project.entry-points."kedro.hooks"]
+
+[tool.setuptools.dynamic.dependencies]
+file = "requirements.txt"
+
+[tool.setuptools.dynamic.version]
+attr = "audio_transcription.__version__"
+
+[tool.setuptools.packages.find]
+where = [ "src",]
+namespaces = false

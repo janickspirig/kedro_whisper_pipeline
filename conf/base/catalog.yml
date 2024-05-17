@@ -1,0 +1,23 @@
+# Here you can define all your data sets by using simple YAML syntax.
+#
+# Documentation for this file format can be found in "The Data Catalog"
+# Link: https://docs.kedro.org/en/stable/data/data_catalog.html
+
+raw_audio_files:
+  type: partitions.PartitionedDataset
+  dataset: audio_transcription.datasets.audio_dataset.AudioDataset
+  path: data/01_raw
+  filename_suffix: ".mp3"
+
+mi_audio_files:
+  type: partitions.PartitionedDataset
+  dataset: audio_transcription.datasets.audio_dataset.AudioDataset
+  path: data/05_model_input
+  filename_suffix: ".mp3"
+
+mo_transcripts:
+  type: partitions.PartitionedDataset
+  dataset:
+    type: text.TextDataset
+  path: data/07_model_output
+  filename_suffix: ".txt"
